@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube VIP Telegram - Acesso Exclusivo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6TbyqQkbwKGk6IUX9kAJwxO7tnQlvEMruYIRYTU-9Wg68vZTZZFa-8yM&s=10');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #f1f1f1;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #e94560;
+            text-shadow: 0 2px 10px rgba(233, 69, 96, 0.4);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a9a9a9;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #e94560;
+        }
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .info-box {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #e94560;
+        }
+        
+        h2 {
+            color: #e94560;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2 i {
+            font-size: 1.3rem;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #dcdcdc;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        li:before {
+            content: "•";
+            color: #e94560;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        .payment-box {
+            background: rgba(0, 179, 60, 0.15);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 179, 60, 0.3);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .payment-box h2 {
+            color: #00b33c;
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            width: 150px;
+            text-align: center;
+        }
+        
+        .step i {
+            font-size: 2rem;
+            color: #00b33c;
+            margin-bottom: 10px;
+        }
+        
+        .cta-box {
+            text-align: center;
+            padding: 25px;
+            background: rgba(233, 69, 96, 0.15);
+            border-radius: 15px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #0088cc, #006da0);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.6);
+        }
+        
+        .warning {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(255, 193, 7, 0.15);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #a9a9a9;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fab fa-telegram"></i>
+            </div>
+            <h1>Clube VIP Telegram</h1>
+            <p class="subtitle">Conteúdo exclusivo para maiores de 18 anos</p>
+        </header>
+        
+        <div class="content">
+            <div class="info-box">
+                <h2><i class="fas fa-star"></i> Vantagens Exclusivas</h2>
+                <p>Ao entrar para nosso clube VIP, você terá acesso a:</p>
+                <ul>
+                    <li>Conteúdo premium e exclusivo</li>
+                    <li>Comunidade selecionada</li>
+                    <li>Interação direta com os administradores</li>
+                    <li>Atualizações diárias</li>
+                    <li>Conteúdo personalizado sob demanda</li>
+                </ul>
+            </div>
+            
+            <div class="payment-box">
+                <h2><i class="fas fa-money-bill-wave"></i> Pagamento via PIX</h2>
+                <p>Acesso imediato após a confirmação do pagamento</p>
+                
+                <div class="steps">
+                    <div class="step">
+                        <i class="fas fa-robot"></i>
+                        <p>Acesse nosso bot</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-qrcode"></i>
+                        <p>Faça o pagamento via PIX</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Confirmação automática</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-unlock"></i>
+                        <p>Acesso liberado</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-box">
+                <h2><i class="fas fa-shield-alt"></i> Ambiente Seguro</h2>
+                <p>Nosso grupo prioriza a segurança e a privacidade dos membros:</p>
+                <ul>
+                    <li>Conteúdo protegido contra divulgação</li>
+                    <li>Verificação de idade rigorosa</li>
+                    <li>Sem tolerância a comportamentos inadequados</li>
+                    <li>Sem compartilhamento de dados pessoais</li>
+                </ul>
+            </div>
+            
+            <div class="cta-box">
+                <h2><i class="fas fa-rocket"></i> Entre Agora Mesmo!</h2>
+                <p>Clique no botão abaixo para ser direcionado ao nosso bot oficial no Telegram e garantir seu acesso VIP!</p>
+                <a href="https://t.me/Hotclubana_bot" class="btn">
+                    <i class="fab fa-telegram"></i> ACESSAR BOT OFICIAL
+                </a>
+            </div>
+            
+            <div class="warning">
+                <p>⚠️ <strong>Atenção:</strong> Este grupo é exclusivo para maiores de 18 anos. Ao entrar, você declara ter idade legal permitida.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 Clube VIP Telegram - Todos os direitos reservados</p>
+        </footer>
+    </div>
+
+    <script>
+        // Adicionando interação aos botões
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    alert('Você será redirecionado para o bot oficial do Telegram.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
